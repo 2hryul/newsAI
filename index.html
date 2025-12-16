@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newsAi - Multi-LLM Aggregator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="webviews-wrapper">
+            <div class="webview-pane">
+                <div class="pane-header">ChatGPT</div>
+                <webview id="chatgpt" src="https://chatgpt.com/" partition="persist:chatgpt"></webview>
+            </div>
+            <div class="webview-pane">
+                <div class="pane-header">Claude</div>
+                <webview id="claude" src="https://claude.ai/new" partition="persist:claude"></webview>
+            </div>
+            <div class="webview-pane">
+                <div class="pane-header">Gemini</div>
+                <webview id="gemini" src="https://gemini.google.com/app" partition="persist:gemini"></webview>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="input-wrapper">
+                <textarea id="prompt-input"
+                    placeholder="Type your message here to send to all AI services..."></textarea>
+            </div>
+            <div class="actions-wrapper">
+                <button id="send-btn" class="primary-btn">SEND</button>
+                <button id="news-btn" class="secondary-btn">뉴스검색</button>
+            </div>
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>

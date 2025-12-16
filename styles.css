@@ -1,0 +1,129 @@
+:root {
+    --bg-color: #1e1e1e;
+    --pane-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --accent-color: #007acc;
+    --accent-hover: #005fa3;
+    --border-color: #444;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.webviews-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    background-color: var(--border-color); /* Separator color */
+}
+
+.webview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--pane-bg);
+    min-width: 300px;
+}
+
+.pane-header {
+    padding: 8px 16px;
+    background-color: #252526;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+webview {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* Webviews usually have white bg until loaded */
+}
+
+.control-panel {
+    height: 120px;
+    background-color: #252526;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+}
+
+.input-wrapper {
+    flex: 1;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    background-color: #3c3c3c;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    resize: none;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.actions-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 150px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: white;
+    flex: 2;
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.secondary-btn {
+    background-color: #444;
+    color: #ccc;
+    flex: 1;
+}
+
+.secondary-btn:hover {
+    background-color: #555;
+}
